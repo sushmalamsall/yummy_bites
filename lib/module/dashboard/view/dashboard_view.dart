@@ -1,4 +1,5 @@
 import 'package:auto_route/annotations.dart';
+import 'package:enefty_icons/enefty_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:yummy_bites/module/home/view/home_view.dart';
 import 'package:yummy_bites/theme/app_colors.dart';
@@ -15,10 +16,10 @@ class _DashboardViewState extends State<DashboardView> {
   int _selectedIndex = 0;
 
   final List<IconData> _icons = [
-    Icons.home_outlined,
-    Icons.search_outlined,
-    Icons.favorite_outline,
-    Icons.person_outlined,
+    EneftyIcons.home_outline,
+    EneftyIcons.search_status_outline,
+    EneftyIcons.heart_outline,
+    EneftyIcons.setting_outline,
   ];
 
   final List<Widget> _pages = const [
@@ -48,7 +49,7 @@ class _DashboardViewState extends State<DashboardView> {
                     color: isActive
                         ? AppColors.of(context).primaryYellow
                         : AppColors.of(context).lightBlack,
-                    size: 28,
+                    size: 20,
                   ),
                   onPressed: () {
                     setState(() {
