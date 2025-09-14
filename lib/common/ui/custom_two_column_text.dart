@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:yummy_bites/common/ui/custom_ui_helper.dart';
 
 class CustomTwoColumnText extends StatelessWidget {
   final String title;
