@@ -4,6 +4,8 @@ import 'package:yummy_bites/theme/app_theme_manager.dart';
 
 class AppColors {
   final Color primaryBlack;
+  final Color secondaryBlack;
+  final Color mediumBlack;
   final Color lightBlack;
   final Color primaryYellow;
   final Color textYellow;
@@ -17,6 +19,8 @@ class AppColors {
 
   AppColors({
     required this.primaryBlack,
+    required this.secondaryBlack,
+    required this.mediumBlack,
     required this.lightBlack,
     required this.primaryYellow,
     required this.textYellow,
@@ -32,6 +36,8 @@ class AppColors {
   static AppColors data() {
     return AppColors(
       primaryBlack: _AppColors.primaryBlack,
+      secondaryBlack: _AppColors.secondaryBlack,
+      mediumBlack: _AppColors.mediumBlack,
       lightBlack: _AppColors.lightBlack,
       textYellow: _AppColors.textYellow,
       primaryYellow: _AppColors.primaryYellow,
@@ -51,6 +57,8 @@ class AppColors {
 
 class _AppColors {
   static const Color primaryBlack = Color(0xFF111111);
+  static const Color secondaryBlack = Color(0xFF1A1A1A);
+  static const Color mediumBlack = Color(0xFF262626);
   static const Color lightBlack = Color(0xFF333333);
   static const Color textYellow = Color(0xFFF7D917);
   static const Color primaryYellow = Color(0xFFFFb400);
