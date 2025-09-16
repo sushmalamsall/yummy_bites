@@ -58,7 +58,7 @@ class CustomScaffold extends StatelessWidget {
             end: Alignment.centerRight,
           ),
         ),
-        child: Padding(padding: xlPadding, child: body),
+        child: Padding(padding: xlPadding.copyWith(bottom: 0), child: body),
       ),
       floatingActionButton: floating
           ? GestureDetector(

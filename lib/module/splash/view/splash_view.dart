@@ -25,7 +25,7 @@ class _SplashViewState extends State<SplashView> with TickerProviderStateMixin {
   late Animation<double> _yummyScaleAnimation;
   late Animation<double> _yummyFadeAnimation;
 
-  String fullText = 'Some Small Text Goes Here.';
+  String fullText = 'A recipe app.';
   String displayedText = '';
   int _typingCharIndex = 0;
   Timer? _typingTimer;

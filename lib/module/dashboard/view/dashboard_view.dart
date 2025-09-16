@@ -2,6 +2,7 @@ import 'package:auto_route/annotations.dart';
 import 'package:enefty_icons/enefty_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:yummy_bites/module/home/view/home_view.dart';
+import 'package:yummy_bites/module/search/view/search_view.dart';
 import 'package:yummy_bites/theme/app_colors.dart';
 
 @RoutePage()
@@ -24,7 +25,7 @@ class _DashboardViewState extends State<DashboardView> {
 
   final List<Widget> _pages = const [
     HomeView(),
-    HomeView(),
+    SearchView(),
     HomeView(),
     HomeView(),
   ];

@@ -43,9 +43,7 @@ class OnboardingViewModel extends IndexTrackingViewModel {
   ];
   final PageController controller = PageController();
 
-  void skip() {
-    // RouterHelper().navigateToGetStartedView();
-  }
+  void skip() {}
 
   @override
   void dispose() {
@@ -59,9 +57,7 @@ class OnboardingViewModel extends IndexTrackingViewModel {
         duration: Duration(milliseconds: 300),
         curve: Curves.easeInOut,
       );
-    } else {
-      // RouterHelper().navigateToGetStartedView();
-    }
+    } else {}
   }
 
   onExploreRecipesPressed() {
