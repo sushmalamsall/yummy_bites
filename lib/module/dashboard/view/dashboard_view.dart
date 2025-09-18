@@ -34,45 +34,51 @@ class _DashboardViewState extends State<DashboardView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _pages[_selectedIndex],
-      bottomNavigationBar: BottomAppBar(
-        color: const Color(0xFF1A1A1A),
-        shape: const CircularNotchedRectangle(),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: List.generate(_icons.length, (index) {
-            final isActive = _selectedIndex == index;
-            return Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                IconButton(
-                  icon: Icon(
-                    _icons[index],
-                    color: isActive
-                        ? AppColors.of(context).primaryYellow
-                        : AppColors.of(context).lightBlack,
-                    size: 20,
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      _selectedIndex = index;
-                    });
-                  },
-                ),
-                AnimatedContainer(
-                  duration: const Duration(milliseconds: 200),
-                  height: 6,
-                  width: 6,
-                  decoration: BoxDecoration(
-                    color: isActive
-                        ? AppColors.of(context).primaryYellow
-                        : Colors.transparent,
-                    shape: BoxShape.circle,
-                  ),
-                ),
-              ],
-            );
-          }),
-        ),
+      bottomNavigationBar: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(height: 0.2, color: Colors.grey),
+          BottomAppBar(
+            color: const Color(0xFF1A1A1A),
+            shape: const CircularNotchedRectangle(),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: List.generate(_icons.length, (index) {
+                final isActive = _selectedIndex == index;
+                return Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    IconButton(
+                      icon: Icon(
+                        _icons[index],
+                        color: isActive
+                            ? AppColors.of(context).primaryYellow
+                            : AppColors.of(context).lightBlack,
+                        size: 20,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          _selectedIndex = index;
+                        });
+                      },
+                    ),
+                    AnimatedContainer(
+                      duration: const Duration(milliseconds: 200),
+                      height: 6,
+                      width: 6,
+                      decoration: BoxDecoration(
+                        color: isActive
+                            ? AppColors.of(context).primaryYellow
+                            : Colors.transparent,
+                        shape: BoxShape.circle,
+                      ),
+                    ),
+                  ],
+                );
+              }),
+            ),
+          ),
+        ],
       ),
     );
   }

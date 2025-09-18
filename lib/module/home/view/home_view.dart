@@ -20,10 +20,10 @@ class HomeView extends StatelessWidget {
         return CustomKeyboardHide(
           child: CustomScaffold(
             title: "Hi, Ukme",
-            subtitle: "Ready to cook for dinner?",
+            subtitle: "Ready to make Breakfast?",
             body: Column(
               children: [
-                SizedBox(height: 150),
+                SizedBox(height: 130),
                 Padding(
                   padding: sPadding,
                   child: Container(
@@ -137,12 +137,12 @@ class HomeView extends StatelessWidget {
 
                 Expanded(
                   child: GridView.builder(
-                    padding: sPadding.copyWith(top: 80, bottom: 0),
+                    padding: sPadding.copyWith(top: 70, bottom: 0),
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       crossAxisSpacing: 40,
                       mainAxisSpacing: 80,
-                      childAspectRatio: 0.88,
+                      childAspectRatio: 0.75,
                     ),
                     itemCount: model.selectedMeals.length,
                     itemBuilder: (context, index) {
@@ -176,7 +176,7 @@ class HomeView extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Padding(
-                                    padding: mPadding,
+                                    padding: xsPadding,
                                     child: Text(
                                       meal["name"],
                                       style: GoogleFonts.poppins(
@@ -277,14 +277,13 @@ class HomeView extends StatelessWidget {
                                 width: 100,
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
-                                  color: AppColors.of(context).secondaryBlack,
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.black.withOpacity(0.5),
-                                      blurRadius: 2,
-                                      offset: Offset(4, 4),
-                                    ),
-                                  ],
+                                ),
+                                child: ClipOval(
+                                  child: FittedBox(
+                                    fit: BoxFit
+                                        .cover, // makes the bowl scale to fill
+                                    child: Image.asset(meal["image"]),
+                                  ),
                                 ),
                               ),
                             ),

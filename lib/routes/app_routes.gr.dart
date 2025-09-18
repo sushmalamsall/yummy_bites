@@ -80,7 +80,6 @@ class OnboardRoute extends _i5.PageRouteInfo<OnboardRouteArgs> {
         key: args.key,
         title: args.title,
         imagePath: args.imagePath,
-        richTextSegments: args.richTextSegments,
       );
     },
   );

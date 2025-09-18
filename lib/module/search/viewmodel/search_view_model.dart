@@ -1,3 +1,210 @@
 import 'package:stacked/stacked.dart';
 
-class SearchViewModel extends BaseViewModel {}
+class SearchViewModel extends BaseViewModel {
+  int selectedCategoryIndex = 0;
+
+  final List<Map<String, String>> mealCategories = [
+    {"emoji": "🍳", "name": "Breakfast"},
+    {"emoji": "🥪", "name": "Lunch"},
+    {"emoji": "🍝", "name": "Dinner"},
+    {"emoji": "🍿", "name": "Snacks"},
+    {"emoji": "🍰", "name": "Dessert"},
+  ];
+
+  final Map<String, List<Map<String, dynamic>>> meals = {
+    "Breakfast": [
+      {
+        "name": "Garlic Butter Croissant",
+        "time": 20,
+        "level": "Easy",
+        "rating": 4.2,
+        "image": "assets/breakfast/garlic_butter_croissant.png",
+        "trending": true,
+        "isfavourite": false,
+      },
+      {
+        "name": "Truffle Scrambled Eggs",
+        "time": 15,
+        "level": "Easy",
+        "rating": 4.5,
+        "image": "assets/breakfast/truffled_scrambled_eggs.png",
+        "trending": true,
+        "isfavourite": true,
+      },
+      {
+        "name": "Smoked Salmon Bagel",
+        "time": 25,
+        "level": "Medium",
+        "rating": 4.7,
+        "image": "assets/breakfast/salmon_bagel.png",
+        "trending": false,
+        "isfavourite": true,
+      },
+      {
+        "name": "Avocado Toast with Poached Egg",
+        "time": 10,
+        "level": "Easy",
+        "rating": 4.3,
+        "image": "assets/breakfast/avocado_toast.png",
+        "trending": false,
+        "isfavourite": false,
+      },
+    ],
+    "Lunch": [
+      {
+        "name": "Grilled Chicken Caesar Salad",
+        "time": 30,
+        "level": "Medium",
+        "rating": 4.6,
+        "image": "assets/breakfast/grilled_chicken.png",
+        "trending": true,
+        "isfavourite": true,
+      },
+      {
+        "name": "Beef Wellington Sandwich",
+        "time": 45,
+        "level": "Hard",
+        "rating": 4.8,
+        "image": "assets/breakfast/beef_sandwich.png",
+        "trending": true,
+        "isfavourite": false,
+      },
+      {
+        "name": "Truffle Mushroom Risotto",
+        "time": 40,
+        "level": "Hard",
+        "rating": 4.7,
+        "image": "assets/breakfast/truffle_mushroom_risotto.png",
+        "trending": false,
+        "isfavourite": false,
+      },
+      {
+        "name": "Seared Tuna Nicoise Salad",
+        "time": 35,
+        "level": "Medium",
+        "rating": 4.5,
+        "image": "assets/breakfast/tuna_nicoise_salad.png",
+        "trending": false,
+        "isfavourite": true,
+      },
+    ],
+    "Dinner": [
+      {
+        "name": "Garlic Shrimp Spaghetti",
+        "time": 60,
+        "level": "Hard",
+        "rating": 4.8,
+        "image": "assets/dinner/shrimp_spaghetti.png",
+        "trending": true,
+        "isfavourite": false,
+      },
+      {
+        "name": "Penne Chicken Carbonara",
+        "time": 55,
+        "level": "Medium",
+        "rating": 4.6,
+        "image": "assets/dinner/chicken_carbonara.png",
+        "trending": true,
+        "isfavourite": true,
+      },
+      {
+        "name": "Herb-Crusted Rack of Lamb",
+        "time": 70,
+        "level": "Hard",
+        "rating": 4.9,
+        "image": "assets/dinner/rack_lamb.png",
+        "trending": false,
+        "isfavourite": false,
+      },
+      {
+        "name": "Seared Salmon with Lemon Butter",
+        "time": 50,
+        "level": "Medium",
+        "rating": 4.7,
+        "image": "assets/dinner/salmon_lemon.png",
+        "trending": true,
+        "isfavourite": false,
+      },
+    ],
+    "Snacks": [
+      {
+        "name": "Truffle Parmesan Fries",
+        "time": 15,
+        "level": "Easy",
+        "rating": 4.3,
+        "image": "assets/snacks/parmesan_fries.png",
+        "trending": true,
+        "isfavourite": false,
+      },
+      {
+        "name": "Gourmet Chicken Nuggets",
+        "time": 20,
+        "level": "Easy",
+        "rating": 4.4,
+        "image": "assets/snacks/chicken_nuggets.png",
+        "trending": true,
+        "isfavourite": false,
+      },
+      {
+        "name": "Mini Caprese Skewers",
+        "time": 10,
+        "level": "Easy",
+        "rating": 4.5,
+        "image": "assets/snacks/caprese_skewers.png",
+        "trending": true,
+        "isfavourite": false,
+      },
+      {
+        "name": "Spicy Sweet Potato Chips",
+        "time": 12,
+        "level": "Easy",
+        "rating": 4.2,
+        "image": "assets/snacks/sweet_potato_chips.png",
+        "trending": true,
+        "isfavourite": false,
+      },
+    ],
+    "Dessert": [
+      {
+        "name": "Chocolate Lava Cake",
+        "time": 25,
+        "level": "Medium",
+        "rating": 4.8,
+        "image": "assets/dessert/lava_cake.png",
+        "trending": true,
+        "isfavourite": false,
+      },
+      {
+        "name": "Vanilla Bean Panna Cotta",
+        "time": 20,
+        "level": "Medium",
+        "rating": 4.6,
+        "image": "assets/dessert/panna_cotta.png",
+        "trending": true,
+        "isfavourite": false,
+      },
+      {
+        "name": "Salted Caramel Brownie",
+        "time": 30,
+        "level": "Medium",
+        "rating": 4.7,
+        "image": "assets/dessert/salted_brownie.png",
+        "trending": true,
+        "isfavourite": false,
+      },
+      {
+        "name": "Strawberry Shortcake Tart",
+        "time": 35,
+        "level": "Hard",
+        "rating": 4.9,
+        "image": "assets/dessert/strawberry_tart.png",
+        "trending": true,
+        "isfavourite": false,
+      },
+    ],
+  };
+
+  List<Map<String, dynamic>> get allMeals {
+    return meals.values.expand((mealList) => mealList).toList();
+  }
+}

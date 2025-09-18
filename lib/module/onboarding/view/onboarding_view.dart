@@ -76,23 +76,8 @@ class OnboardingView extends StatelessWidget {
 class OnboardPage extends StatelessWidget {
   final String title;
   final String imagePath;
-  final List<Map<String, dynamic>> richTextSegments;
 
-  const OnboardPage({
-    super.key,
-    required this.title,
-    required this.imagePath,
-    required this.richTextSegments,
-  });
-
-  List<TextSpan> buildTextSpans(BuildContext context) {
-    return richTextSegments.map((segment) {
-      return TextSpan(
-        text: segment['text'],
-        style: TextStyle(color: segment['color']),
-      );
-    }).toList();
-  }
+  const OnboardPage({super.key, required this.title, required this.imagePath});
 
   @override
   Widget build(BuildContext context) {

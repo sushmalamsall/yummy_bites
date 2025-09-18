@@ -10,35 +10,14 @@ class OnboardingViewModel extends IndexTrackingViewModel {
     OnboardPage(
       title: LocalizedStrings.onBoardingTitle1,
       imagePath: AssetStrings.onboarding1,
-      richTextSegments: [
-        {'text': LocalizedStrings.understand, 'color': Colors.white},
-        {'text': '\n${LocalizedStrings.herCycle}', 'color': Colors.red},
-        {'text': '\n${LocalizedStrings.showUpBetter}', 'color': Colors.white},
-      ],
     ),
     OnboardPage(
       title: LocalizedStrings.onBoardingTitle2,
       imagePath: AssetStrings.onboarding2,
-      richTextSegments: [
-        {
-          'text': '${LocalizedStrings.knowWhen}\n${LocalizedStrings.sheIs}',
-          'color': Colors.white,
-        },
-
-        {'text': '\n${LocalizedStrings.extraEmotional}', 'color': Colors.blue},
-      ],
     ),
     OnboardPage(
       title: LocalizedStrings.onBoardingTitle3,
       imagePath: AssetStrings.onboarding3,
-      richTextSegments: [
-        {'text': LocalizedStrings.planBetterNSkip, 'color': Colors.white},
-        {'text': '\n${LocalizedStrings.surprises} ', 'color': Colors.green},
-        {
-          'text': '${LocalizedStrings.stay}\n${LocalizedStrings.golden}',
-          'color': Colors.white,
-        },
-      ],
     ),
   ];
   final PageController controller = PageController();
