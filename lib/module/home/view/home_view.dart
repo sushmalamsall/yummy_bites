@@ -148,147 +148,151 @@ class HomeView extends StatelessWidget {
                     itemBuilder: (context, index) {
                       final meal = model.selectedMeals[index];
 
-                      return Stack(
-                        clipBehavior: Clip.none,
-                        children: [
-                          Container(
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                colors: [
-                                  AppColors.of(context).secondaryBlack,
-                                  AppColors.of(context).secondaryBlack,
-                                ],
-                                begin: Alignment.topCenter,
-                                end: Alignment.bottomCenter,
-                              ),
-                              borderRadius: BorderRadius.circular(24),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black.withOpacity(0.1),
-                                  blurRadius: 4,
-                                  offset: Offset(2, 4),
+                      return GestureDetector(
+                        onTap: model.onFoodPressed,
+                        child: Stack(
+                          clipBehavior: Clip.none,
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                  colors: [
+                                    AppColors.of(context).secondaryBlack,
+                                    AppColors.of(context).secondaryBlack,
+                                  ],
+                                  begin: Alignment.topCenter,
+                                  end: Alignment.bottomCenter,
                                 ),
-                              ],
-                            ),
-                            child: Center(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Padding(
-                                    padding: xsPadding,
-                                    child: Text(
-                                      meal["name"],
-                                      style: GoogleFonts.poppins(
-                                        fontSize: 13,
-                                        fontWeight: FontWeight.w500,
-                                        color: Colors.white,
+                                borderRadius: BorderRadius.circular(24),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(0.1),
+                                    blurRadius: 4,
+                                    offset: Offset(2, 4),
+                                  ),
+                                ],
+                              ),
+                              child: Center(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Padding(
+                                      padding: xsPadding,
+                                      child: Text(
+                                        meal["name"],
+                                        style: GoogleFonts.poppins(
+                                          fontSize: 13,
+                                          fontWeight: FontWeight.w500,
+                                          color: Colors.white,
+                                        ),
+                                        textAlign: TextAlign.center,
                                       ),
-                                      textAlign: TextAlign.center,
+                                    ),
+                                    CustomRating(
+                                      rating: meal["rating"],
+                                      size: 18,
+                                      filledColor: AppColors.of(
+                                        context,
+                                      ).primaryYellow,
+                                      unfilledColor: AppColors.of(
+                                        context,
+                                      ).lightBlack,
+                                    ),
+                                    mHSpan,
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              meal["time"].toString(),
+                                              style: GoogleFonts.poppins(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w400,
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                            Text(
+                                              "Min",
+                                              style: GoogleFonts.poppins(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w400,
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        mWSpan,
+
+                                        SizedBox(
+                                          height: 20,
+                                          child: VerticalDivider(
+                                            color: Colors.white,
+                                            thickness: 0.8,
+                                          ),
+                                        ),
+                                        mWSpan,
+                                        Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              meal["level"],
+                                              style: GoogleFonts.poppins(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w400,
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                            Text(
+                                              "Lvl",
+                                              style: GoogleFonts.poppins(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w400,
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                    lHSpan,
+                                  ],
+                                ),
+                              ),
+                            ),
+
+                            Positioned(
+                              top: -50,
+                              left: 0,
+                              right: 0,
+                              child: Center(
+                                child: Container(
+                                  height: 100,
+                                  width: 100,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: ClipOval(
+                                    child: FittedBox(
+                                      fit: BoxFit
+                                          .cover, // makes the bowl scale to fill
+                                      child: Image.asset(meal["image"]),
                                     ),
                                   ),
-                                  CustomRating(
-                                    rating: meal["rating"],
-                                    size: 18,
-                                    filledColor: AppColors.of(
-                                      context,
-                                    ).primaryYellow,
-                                    unfilledColor: AppColors.of(
-                                      context,
-                                    ).lightBlack,
-                                  ),
-                                  mHSpan,
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                            meal["time"].toString(),
-                                            style: GoogleFonts.poppins(
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.w400,
-                                              color: Colors.white,
-                                            ),
-                                          ),
-                                          Text(
-                                            "Min",
-                                            style: GoogleFonts.poppins(
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.w400,
-                                              color: Colors.white,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      mWSpan,
-
-                                      SizedBox(
-                                        height: 20,
-                                        child: VerticalDivider(
-                                          color: Colors.white,
-                                          thickness: 0.8,
-                                        ),
-                                      ),
-                                      mWSpan,
-                                      Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                            meal["level"],
-                                            style: GoogleFonts.poppins(
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.w400,
-                                              color: Colors.white,
-                                            ),
-                                          ),
-                                          Text(
-                                            "Lvl",
-                                            style: GoogleFonts.poppins(
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.w400,
-                                              color: Colors.white,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                  lHSpan,
-                                ],
-                              ),
-                            ),
-                          ),
-
-                          Positioned(
-                            top: -50,
-                            left: 0,
-                            right: 0,
-                            child: Center(
-                              child: Container(
-                                height: 100,
-                                width: 100,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                ),
-                                child: ClipOval(
-                                  child: FittedBox(
-                                    fit: BoxFit
-                                        .cover, // makes the bowl scale to fill
-                                    child: Image.asset(meal["image"]),
-                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       );
                     },
                   ),

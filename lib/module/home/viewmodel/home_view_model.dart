@@ -1,4 +1,5 @@
 import 'package:stacked/stacked.dart';
+import 'package:yummy_bites/routes/navigation_helper.dart';
 
 class HomeViewModel extends BaseViewModel {
   int selectedCategoryIndex = 0;
@@ -172,5 +173,9 @@ class HomeViewModel extends BaseViewModel {
   List<Map<String, dynamic>> get selectedMeals {
     final category = mealCategories[selectedCategoryIndex]["name"]!;
     return meals[category] ?? [];
+  }
+
+  onFoodPressed() {
+    RouterHelper().navigateToFoodView();
   }
 }

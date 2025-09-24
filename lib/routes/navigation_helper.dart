@@ -62,20 +62,9 @@ class RouterHelper {
       predicate: (r) => false,
     );
   }
-
-  // clearStackAndShowLoginView() {
-  //   return _router.pushAndPopUntil(
-  //     const routes.LoginView(),
-  //     predicate: (r) => false,
-  //   );
-  // }
 }
 
 extension RouterHelperX on RouterHelper {
-  // Future<dynamic> navigateToLoginView() async {
-  //   return navigate(routes.LoginView());
-  // }
-
   Future<dynamic> navigateToDashboardView() async {
     return navigate(routes.DashboardView());
   }
@@ -84,55 +73,7 @@ extension RouterHelperX on RouterHelper {
     return navigate(routes.OnboardingView());
   }
 
-  // Future<dynamic> navigateToTrialView() async {
-  //   return navigate(routes.GetStartedView());
-  // }
-
-  // Future<dynamic> navigateToForgotPasswordview() async {
-  //   return navigate(routes.ForgotPasswordView());
-  // }
-
-  // Future<dynamic> navigateToResetPasswordview() async {
-  //   return navigate(routes.ResetPasswordView());
-  // }
-
-  // Future<dynamic> navigateToOtpVerificationview(String email) async {
-  //   return navigate(routes.OtpVerificationView(email: email));
-  // }
-
-  // Future<dynamic> navigateToLastCycleView() async {
-  //   return navigate(routes.LastCycleView());
-  // }
-
-  // Future<dynamic> navigateToDashboardView() async {
-  //   return navigate(routes.DashboardView());
-  // }
-
-  // Future<dynamic> navigateToNotificationsView() async {
-  //   return navigate(routes.NotificationsView());
-  // }
-
-  // Future<dynamic> navigateToProfileView() async {
-  //   return navigate(routes.ProfileDrawer());
-  // }
-
-  // Future<dynamic> navigateToSecurityView() async {
-  //   return navigate(routes.SecurityView());
-  // }
-
-  // Future<dynamic> navigateToInitialQnaView() async {
-  //   return navigate(routes.InitialQnaView());
-  // }
-
-  // Future<dynamic> navigateToFeedbackView() async {
-  //   return navigate(routes.FeedbackView());
-  // }
-
-  // Future<dynamic> navigateToThankyouView() async {
-  //   return navigate(routes.ThankyouView());
-  // }
-
-  // Future<dynamic> navigateToChooseLanguageView() async {
-  //   return navigate(routes.ChooseLanguageView());
-  // }
+  Future<dynamic> navigateToFoodView() async {
+    return navigate(routes.FoodView());
+  }
 }

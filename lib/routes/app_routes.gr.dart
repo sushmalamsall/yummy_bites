@@ -9,24 +9,24 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i5;
-import 'package:collection/collection.dart' as _i7;
-import 'package:flutter/material.dart' as _i6;
+import 'package:auto_route/auto_route.dart' as _i6;
+import 'package:flutter/material.dart' as _i7;
 import 'package:yummy_bites/module/dashboard/view/dashboard_view.dart' as _i1;
+import 'package:yummy_bites/module/food/view/food_view.dart' as _i2;
 import 'package:yummy_bites/module/onboarding/view/get_started_view.dart'
-    as _i2;
-import 'package:yummy_bites/module/onboarding/view/onboarding_view.dart' as _i3;
-import 'package:yummy_bites/module/splash/view/splash_view.dart' as _i4;
+    as _i3;
+import 'package:yummy_bites/module/onboarding/view/onboarding_view.dart' as _i4;
+import 'package:yummy_bites/module/splash/view/splash_view.dart' as _i5;
 
 /// generated route for
 /// [_i1.DashboardView]
-class DashboardView extends _i5.PageRouteInfo<void> {
-  const DashboardView({List<_i5.PageRouteInfo>? children})
+class DashboardView extends _i6.PageRouteInfo<void> {
+  const DashboardView({List<_i6.PageRouteInfo>? children})
     : super(DashboardView.name, initialChildren: children);
 
   static const String name = 'DashboardView';
 
-  static _i5.PageInfo page = _i5.PageInfo(
+  static _i6.PageInfo page = _i6.PageInfo(
     name,
     builder: (data) {
       return const _i1.DashboardView();
@@ -35,48 +35,58 @@ class DashboardView extends _i5.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i2.GetStartedView]
-class GetStartedView extends _i5.PageRouteInfo<void> {
-  const GetStartedView({List<_i5.PageRouteInfo>? children})
-    : super(GetStartedView.name, initialChildren: children);
+/// [_i2.FoodView]
+class FoodView extends _i6.PageRouteInfo<void> {
+  const FoodView({List<_i6.PageRouteInfo>? children})
+    : super(FoodView.name, initialChildren: children);
 
-  static const String name = 'GetStartedView';
+  static const String name = 'FoodView';
 
-  static _i5.PageInfo page = _i5.PageInfo(
+  static _i6.PageInfo page = _i6.PageInfo(
     name,
     builder: (data) {
-      return const _i2.GetStartedView();
+      return const _i2.FoodView();
     },
   );
 }
 
 /// generated route for
-/// [_i3.OnboardPage]
-class OnboardRoute extends _i5.PageRouteInfo<OnboardRouteArgs> {
+/// [_i3.GetStartedView]
+class GetStartedView extends _i6.PageRouteInfo<void> {
+  const GetStartedView({List<_i6.PageRouteInfo>? children})
+    : super(GetStartedView.name, initialChildren: children);
+
+  static const String name = 'GetStartedView';
+
+  static _i6.PageInfo page = _i6.PageInfo(
+    name,
+    builder: (data) {
+      return const _i3.GetStartedView();
+    },
+  );
+}
+
+/// generated route for
+/// [_i4.OnboardPage]
+class OnboardRoute extends _i6.PageRouteInfo<OnboardRouteArgs> {
   OnboardRoute({
-    _i6.Key? key,
+    _i7.Key? key,
     required String title,
     required String imagePath,
-    required List<Map<String, dynamic>> richTextSegments,
-    List<_i5.PageRouteInfo>? children,
+    List<_i6.PageRouteInfo>? children,
   }) : super(
          OnboardRoute.name,
-         args: OnboardRouteArgs(
-           key: key,
-           title: title,
-           imagePath: imagePath,
-           richTextSegments: richTextSegments,
-         ),
+         args: OnboardRouteArgs(key: key, title: title, imagePath: imagePath),
          initialChildren: children,
        );
 
   static const String name = 'OnboardRoute';
 
-  static _i5.PageInfo page = _i5.PageInfo(
+  static _i6.PageInfo page = _i6.PageInfo(
     name,
     builder: (data) {
       final args = data.argsAs<OnboardRouteArgs>();
-      return _i3.OnboardPage(
+      return _i4.OnboardPage(
         key: args.key,
         title: args.title,
         imagePath: args.imagePath,
@@ -90,20 +100,17 @@ class OnboardRouteArgs {
     this.key,
     required this.title,
     required this.imagePath,
-    required this.richTextSegments,
   });
 
-  final _i6.Key? key;
+  final _i7.Key? key;
 
   final String title;
 
   final String imagePath;
 
-  final List<Map<String, dynamic>> richTextSegments;
-
   @override
   String toString() {
-    return 'OnboardRouteArgs{key: $key, title: $title, imagePath: $imagePath, richTextSegments: $richTextSegments}';
+    return 'OnboardRouteArgs{key: $key, title: $title, imagePath: $imagePath}';
   }
 
   @override
@@ -112,49 +119,41 @@ class OnboardRouteArgs {
     if (other is! OnboardRouteArgs) return false;
     return key == other.key &&
         title == other.title &&
-        imagePath == other.imagePath &&
-        const _i7.ListEquality().equals(
-          richTextSegments,
-          other.richTextSegments,
-        );
+        imagePath == other.imagePath;
   }
 
   @override
-  int get hashCode =>
-      key.hashCode ^
-      title.hashCode ^
-      imagePath.hashCode ^
-      const _i7.ListEquality().hash(richTextSegments);
+  int get hashCode => key.hashCode ^ title.hashCode ^ imagePath.hashCode;
 }
 
 /// generated route for
-/// [_i3.OnboardingView]
-class OnboardingView extends _i5.PageRouteInfo<void> {
-  const OnboardingView({List<_i5.PageRouteInfo>? children})
+/// [_i4.OnboardingView]
+class OnboardingView extends _i6.PageRouteInfo<void> {
+  const OnboardingView({List<_i6.PageRouteInfo>? children})
     : super(OnboardingView.name, initialChildren: children);
 
   static const String name = 'OnboardingView';
 
-  static _i5.PageInfo page = _i5.PageInfo(
+  static _i6.PageInfo page = _i6.PageInfo(
     name,
     builder: (data) {
-      return const _i3.OnboardingView();
+      return const _i4.OnboardingView();
     },
   );
 }
 
 /// generated route for
-/// [_i4.SplashView]
-class SplashView extends _i5.PageRouteInfo<void> {
-  const SplashView({List<_i5.PageRouteInfo>? children})
+/// [_i5.SplashView]
+class SplashView extends _i6.PageRouteInfo<void> {
+  const SplashView({List<_i6.PageRouteInfo>? children})
     : super(SplashView.name, initialChildren: children);
 
   static const String name = 'SplashView';
 
-  static _i5.PageInfo page = _i5.PageInfo(
+  static _i6.PageInfo page = _i6.PageInfo(
     name,
     builder: (data) {
-      return const _i4.SplashView();
+      return const _i5.SplashView();
     },
   );
 }
